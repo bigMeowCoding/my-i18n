@@ -1,28 +1,26 @@
+import { createI18n } from "vue-i18n";
 
-import { createApp } from 'vue';
-import App from './App.vue';
-import i18next from 'i18next';
-import I18NextVue from "i18next-vue";
-import en from './i18n/en.json';
-import zh from './i18n/zh.json';
-
-
-i18next.init({
-  resources: {
-    en: {
-      translation: en
-    },
-    zh: {
-      translation: zh
-    }
+import { createApp } from "vue";
+import App from "./App.vue";
+import en from "./i18n/en.json";
+import zh from "./i18n/zh.json";
+const messages = {
+  en: {
+    ...en,
   },
-  lng: 'en', // $t('$t('$t('默认语言')')')
-  fallbackLng: 'en',
-  interpolation: {
-    escapeValue: false // Vue already does escaping
-  }
-});
+  zh: {
+      ...zh
+  },
+};
 
 const app = createApp(App);
-app.use(I18NextVue, { i18next })
-app.mount('#app');
+const i18n = createI18n({
+  locale: "zh",
+  legacy: false,
+  messages,
+});
+
+app.use(i18n);
+debugger
+window.$t = i18n.global.t;
+app.mount("#app");

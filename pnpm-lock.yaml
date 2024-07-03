@@ -32,6 +32,9 @@ importers:
       vue:
         specifier: ^3.2.31
         version: 3.4.31(typescript@4.9.5)
+      vue-i18n:
+        specifier: ^9.13.1
+        version: 9.13.1(vue@3.4.31(typescript@4.9.5))
       vue-i18next:
         specifier: ^0.9.4
         version: 0.9.4(i18next@23.11.5)(vue-params@0.9.4(vue@3.4.31(typescript@4.9.5)))(vue@3.4.31(typescript@4.9.5))
@@ -42,6 +45,9 @@ importers:
       babel-plugin-i18next-extract:
         specifier: ^0.9.1
         version: 0.9.2
+      prettier:
+        specifier: ^3.3.2
+        version: 3.3.2
 
 packages:
 
@@ -282,6 +288,18 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@intlify/core-base@9.13.1':
+    resolution: {integrity: sha512-+bcQRkJO9pcX8d0gel9ZNfrzU22sZFSA0WVhfXrf5jdJOS24a+Bp8pozuS9sBI9Hk/tGz83pgKfmqcn/Ci7/8w==}
+    engines: {node: '>= 16'}
+
+  '@intlify/message-compiler@9.13.1':
+    resolution: {integrity: sha512-SKsVa4ajYGBVm7sHMXd5qX70O2XXjm55zdZB3VeMFCvQyvLew/dLvq3MqnaIsTMF1VkkOb9Ttr6tHcMlyPDL9w==}
+    engines: {node: '>= 16'}
+
+  '@intlify/shared@9.13.1':
+    resolution: {integrity: sha512-u3b6BKGhE6j/JeRU6C/RL2FgyJfy6LakbtfeVF8fJXURpZZTzfh3e05J0bu0XPw447Q6/WUp3C4ajv4TMS4YsQ==}
+    engines: {node: '>= 16'}
+
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
@@ -413,6 +431,9 @@ packages:
 
   '@vue/compiler-ssr@3.4.31':
     resolution: {integrity: sha512-RtefmITAje3fJ8FSg1gwgDhdKhZVntIVbwupdyZDSifZTRMiWxWehAOTCc8/KZDnBOcYQ4/9VWxsTbd3wT0hAA==}
+
+  '@vue/devtools-api@6.6.3':
+    resolution: {integrity: sha512-0MiMsFma/HqA6g3KLKn+AGpL1kgKhFWszC9U29NfpWK5LE7bjeXxySWJrOJ77hBz+TBrBQ7o4QJqbPbqbs8rJw==}
 
   '@vue/reactivity@3.4.31':
     resolution: {integrity: sha512-VGkTani8SOoVkZNds1PfJ/T1SlAIOf8E58PGAhIOUDYPC4GAmFA2u/E14TDAFcf3vVDKunc4QqCe/SHr8xC65Q==}
@@ -951,6 +972,11 @@ packages:
     resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
     engines: {node: ^10 || ^12 || >=14}
 
+  prettier@3.3.2:
+    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
@@ -1178,6 +1204,12 @@ packages:
         optional: true
       terser:
         optional: true
+
+  vue-i18n@9.13.1:
+    resolution: {integrity: sha512-mh0GIxx0wPtPlcB1q4k277y0iKgo25xmDPWioVVYanjPufDBpvu5ySTjP5wOrSvlYQ2m1xI+CFhGdauv/61uQg==}
+    engines: {node: '>= 16'}
+    peerDependencies:
+      vue: ^3.0.0
 
   vue-i18next@0.9.4:
     resolution: {integrity: sha512-dQ7ZQ5hpBYCyfnuXMzV895NQrjFIZi4CUl9gKyN9Yvb69i6SrLqWcJe2Jn+gPxuSG4HmIzr9pnqGIylRtjxaBQ==}
@@ -1435,6 +1467,18 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
+  '@intlify/core-base@9.13.1':
+    dependencies:
+      '@intlify/message-compiler': 9.13.1
+      '@intlify/shared': 9.13.1
+
+  '@intlify/message-compiler@9.13.1':
+    dependencies:
+      '@intlify/shared': 9.13.1
+      source-map-js: 1.2.0
+
+  '@intlify/shared@9.13.1': {}
+
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
       '@jridgewell/set-array': 1.2.1
@@ -1546,6 +1590,8 @@ snapshots:
     dependencies:
       '@vue/compiler-dom': 3.4.31
       '@vue/shared': 3.4.31
+
+  '@vue/devtools-api@6.6.3': {}
 
   '@vue/reactivity@3.4.31':
     dependencies:
@@ -2159,6 +2205,8 @@ snapshots:
       picocolors: 1.0.1
       source-map-js: 1.2.0
 
+  prettier@3.3.2: {}
+
   process-nextick-args@2.0.1: {}
 
   promise-map-series@0.3.0: {}
@@ -2419,6 +2467,13 @@ snapshots:
       rollup: 4.18.0
     optionalDependencies:
       fsevents: 2.3.3
+
+  vue-i18n@9.13.1(vue@3.4.31(typescript@4.9.5)):
+    dependencies:
+      '@intlify/core-base': 9.13.1
+      '@intlify/shared': 9.13.1
+      '@vue/devtools-api': 6.6.3
+      vue: 3.4.31(typescript@4.9.5)
 
   vue-i18next@0.9.4(i18next@23.11.5)(vue-params@0.9.4(vue@3.4.31(typescript@4.9.5)))(vue@3.4.31(typescript@4.9.5)):
     dependencies:
