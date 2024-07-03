@@ -21,6 +21,5 @@ const i18n = createI18n({
 });
 
 app.use(i18n);
-debugger
 window.$t = i18n.global.t;
 app.mount("#app");
