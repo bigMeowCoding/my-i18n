@@ -1,0 +1,27 @@
+{
+  "name": "my-vue-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@panter/vue-i18next": "^0.15.2",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.2.0",
+    "i18next": "^23.11.5",
+    "i18next-parser": "^6.3.4",
+    "i18next-vue": "^4.0.0",
+    "vite": "^5.3.3",
+    "vue": "^3.2.31",
+    "vue-i18next": "^0.9.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "babel-plugin-i18next-extract": "^0.9.1"
+  },
+  "scripts": {
+    "extract-i18n": "node replace-chinese.js",
+    "serve": "vite"
+  },
+  "author": "",
+  "license": "ISC"
+}

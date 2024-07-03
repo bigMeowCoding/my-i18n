@@ -1,0 +1,13 @@
+
+{
+  "input": ["src/**/*.{vue,js}"],
+  "output": "src/i18n/$LOCALE.json",
+  "locales": ["en", "zh"],
+  "defaultNamespace": "translation",
+  "keySeparator": ".",
+  "namespaceSeparator": ":",
+  "interpolation": {
+    "prefix": "{{",
+    "suffix": "}}"
+  }
+}

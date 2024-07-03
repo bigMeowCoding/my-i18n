@@ -1,0 +1,11 @@
+
+{
+  "plugins": [
+    ["i18next-extract", {
+      "locales": ["en", "zh"],
+      "keySeparator": ".",
+      "namespaceSeparator": ":",
+      "outputPath": "src/i18n/{{locale}}.json"
+    }]
+  ]
+}
